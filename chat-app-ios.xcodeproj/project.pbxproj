@@ -7,9 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2D6CDD8C2A3B14D4007DA5D9 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D6CDD8B2A3B14D4007DA5D9 /* ViewModel.swift */; };
+		2D6CDD8E2A3B16A2007DA5D9 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D6CDD8D2A3B16A2007DA5D9 /* BaseViewController.swift */; };
+		2D6CDD902A3B16FD007DA5D9 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D6CDD8F2A3B16FD007DA5D9 /* Logger.swift */; };
+		2D6CDD932A3B17B8007DA5D9 /* Date+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D6CDD922A3B17B8007DA5D9 /* Date+.swift */; };
+		2D6CDD952A3B18DC007DA5D9 /* NSObject+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D6CDD942A3B18DC007DA5D9 /* NSObject+.swift */; };
+		2D6CDD992A3B227B007DA5D9 /* Login.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2D6CDD982A3B227B007DA5D9 /* Login.xib */; };
 		2DF785892A3AF91A0080E067 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DF785882A3AF91A0080E067 /* AppDelegate.swift */; };
 		2DF7858B2A3AF91A0080E067 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DF7858A2A3AF91A0080E067 /* SceneDelegate.swift */; };
-		2DF7858D2A3AF91A0080E067 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DF7858C2A3AF91A0080E067 /* ViewController.swift */; };
+		2DF7858D2A3AF91A0080E067 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DF7858C2A3AF91A0080E067 /* LoginViewController.swift */; };
 		2DF785922A3AF91B0080E067 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2DF785912A3AF91B0080E067 /* Assets.xcassets */; };
 		2DF785952A3AF91B0080E067 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2DF785932A3AF91B0080E067 /* LaunchScreen.storyboard */; };
 		2DF785A02A3AF91B0080E067 /* chat_app_iosTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DF7859F2A3AF91B0080E067 /* chat_app_iosTests.swift */; };
@@ -38,10 +44,16 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2D6CDD8B2A3B14D4007DA5D9 /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
+		2D6CDD8D2A3B16A2007DA5D9 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		2D6CDD8F2A3B16FD007DA5D9 /* Logger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
+		2D6CDD922A3B17B8007DA5D9 /* Date+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+.swift"; sourceTree = "<group>"; };
+		2D6CDD942A3B18DC007DA5D9 /* NSObject+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSObject+.swift"; sourceTree = "<group>"; };
+		2D6CDD982A3B227B007DA5D9 /* Login.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Login.xib; sourceTree = "<group>"; };
 		2DF785852A3AF91A0080E067 /* chat-app-ios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "chat-app-ios.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2DF785882A3AF91A0080E067 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2DF7858A2A3AF91A0080E067 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		2DF7858C2A3AF91A0080E067 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		2DF7858C2A3AF91A0080E067 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		2DF785912A3AF91B0080E067 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2DF785942A3AF91B0080E067 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2DF785962A3AF91B0080E067 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -99,8 +111,163 @@
 				E70483AA3A6F1F4EAD7C9AB6 /* Pods-chat-app-iosTests.debug.xcconfig */,
 				8D4CF6606B2226C80D228C1D /* Pods-chat-app-iosTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		2D6CDD7A2A3B0C9A007DA5D9 /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				2DF7858A2A3AF91A0080E067 /* SceneDelegate.swift */,
+				2DF785882A3AF91A0080E067 /* AppDelegate.swift */,
+			);
+			path = Application;
+			sourceTree = "<group>";
+		};
+		2D6CDD7B2A3B0CC3007DA5D9 /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				2D6CDD972A3B1C94007DA5D9 /* Login */,
+			);
+			path = Presentation;
+			sourceTree = "<group>";
+		};
+		2D6CDD7C2A3B0CD1007DA5D9 /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				2D6CDD892A3B1121007DA5D9 /* UseCases */,
+				2D6CDD882A3B1118007DA5D9 /* Entities */,
+			);
+			path = Domain;
+			sourceTree = "<group>";
+		};
+		2D6CDD7D2A3B0CF1007DA5D9 /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				2D6CDD912A3B178A007DA5D9 /* Extensions */,
+				2D6CDD8A2A3B1481007DA5D9 /* Base */,
+				2D6CDD8F2A3B16FD007DA5D9 /* Logger.swift */,
+			);
+			path = Shared;
+			sourceTree = "<group>";
+		};
+		2D6CDD7E2A3B0CFF007DA5D9 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				2DF785912A3AF91B0080E067 /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		2D6CDD7F2A3B0DCF007DA5D9 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				2D6CDD812A3B0E24007DA5D9 /* Realm */,
+				2D6CDD802A3B0E12007DA5D9 /* Network */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		2D6CDD802A3B0E12007DA5D9 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				2D6CDD872A3B1092007DA5D9 /* Cache */,
+				2D6CDD842A3B0ED3007DA5D9 /* Repositories */,
+				2D6CDD832A3B0E9B007DA5D9 /* Entities */,
+				2D6CDD822A3B0E91007DA5D9 /* API */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		2D6CDD812A3B0E24007DA5D9 /* Realm */ = {
+			isa = PBXGroup;
+			children = (
+				2D6CDD862A3B0F93007DA5D9 /* Repositories */,
+				2D6CDD852A3B0F15007DA5D9 /* Entities */,
+			);
+			path = Realm;
+			sourceTree = "<group>";
+		};
+		2D6CDD822A3B0E91007DA5D9 /* API */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
+		2D6CDD832A3B0E9B007DA5D9 /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Entities;
+			sourceTree = "<group>";
+		};
+		2D6CDD842A3B0ED3007DA5D9 /* Repositories */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Repositories;
+			sourceTree = "<group>";
+		};
+		2D6CDD852A3B0F15007DA5D9 /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Entities;
+			sourceTree = "<group>";
+		};
+		2D6CDD862A3B0F93007DA5D9 /* Repositories */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Repositories;
+			sourceTree = "<group>";
+		};
+		2D6CDD872A3B1092007DA5D9 /* Cache */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Cache;
+			sourceTree = "<group>";
+		};
+		2D6CDD882A3B1118007DA5D9 /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Entities;
+			sourceTree = "<group>";
+		};
+		2D6CDD892A3B1121007DA5D9 /* UseCases */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = UseCases;
+			sourceTree = "<group>";
+		};
+		2D6CDD8A2A3B1481007DA5D9 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				2D6CDD8B2A3B14D4007DA5D9 /* ViewModel.swift */,
+				2D6CDD8D2A3B16A2007DA5D9 /* BaseViewController.swift */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
+		2D6CDD912A3B178A007DA5D9 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				2D6CDD922A3B17B8007DA5D9 /* Date+.swift */,
+				2D6CDD942A3B18DC007DA5D9 /* NSObject+.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		2D6CDD972A3B1C94007DA5D9 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				2DF7858C2A3AF91A0080E067 /* LoginViewController.swift */,
+				2D6CDD982A3B227B007DA5D9 /* Login.xib */,
+			);
+			path = Login;
 			sourceTree = "<group>";
 		};
 		2DF7857C2A3AF91A0080E067 = {
@@ -128,10 +295,12 @@
 		2DF785872A3AF91A0080E067 /* chat-app-ios */ = {
 			isa = PBXGroup;
 			children = (
-				2DF785882A3AF91A0080E067 /* AppDelegate.swift */,
-				2DF7858A2A3AF91A0080E067 /* SceneDelegate.swift */,
-				2DF7858C2A3AF91A0080E067 /* ViewController.swift */,
-				2DF785912A3AF91B0080E067 /* Assets.xcassets */,
+				2D6CDD7F2A3B0DCF007DA5D9 /* Data */,
+				2D6CDD7E2A3B0CFF007DA5D9 /* Resources */,
+				2D6CDD7D2A3B0CF1007DA5D9 /* Shared */,
+				2D6CDD7C2A3B0CD1007DA5D9 /* Domain */,
+				2D6CDD7B2A3B0CC3007DA5D9 /* Presentation */,
+				2D6CDD7A2A3B0C9A007DA5D9 /* Application */,
 				2DF785932A3AF91B0080E067 /* LaunchScreen.storyboard */,
 				2DF785962A3AF91B0080E067 /* Info.plist */,
 			);
@@ -276,6 +445,7 @@
 			files = (
 				2DF785952A3AF91B0080E067 /* LaunchScreen.storyboard in Resources */,
 				2DF785922A3AF91B0080E067 /* Assets.xcassets in Resources */,
+				2D6CDD992A3B227B007DA5D9 /* Login.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -403,8 +573,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2DF7858D2A3AF91A0080E067 /* ViewController.swift in Sources */,
+				2D6CDD932A3B17B8007DA5D9 /* Date+.swift in Sources */,
+				2D6CDD8E2A3B16A2007DA5D9 /* BaseViewController.swift in Sources */,
+				2D6CDD902A3B16FD007DA5D9 /* Logger.swift in Sources */,
+				2DF7858D2A3AF91A0080E067 /* LoginViewController.swift in Sources */,
 				2DF785892A3AF91A0080E067 /* AppDelegate.swift in Sources */,
+				2D6CDD952A3B18DC007DA5D9 /* NSObject+.swift in Sources */,
+				2D6CDD8C2A3B14D4007DA5D9 /* ViewModel.swift in Sources */,
 				2DF7858B2A3AF91A0080E067 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
