@@ -14,18 +14,14 @@ class MainViewController: BaseViewController, ViewModelBased {
 
     var viewModel: MainViewModel!
     var disposeBag: DisposeBag! = DisposeBag()
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         bindViewModel()
     }
-    
     override func viewWillAppear(_ animated: Bool) {
         Log.info("\(self) \(#function)")
     }
-    
     // MARK: - Methods
-    
     func bindViewModel() {
         let viewWillAppearSubject = PublishSubject<Void>()
         rx.viewWillAppear
@@ -35,13 +31,14 @@ class MainViewController: BaseViewController, ViewModelBased {
             .disposed(by: disposeBag)
         let input = MainViewModel.Input(firstLoadTrigger: viewWillAppearSubject)
         let output = viewModel.transform(input)
-        
         output.isLoggedIn
             .drive(onNext: { isLoggedIn in
                 if isLoggedIn {
                 } else {
                     let vc = LoginViewController.create()
-                    Application.shared.changeRootViewMainWindow(viewController: UINavigationController(rootViewController: vc))
+                    Application.shared.changeRootViewMainWindow(
+                        viewController: UINavigationController(rootViewController: vc)
+                    )
                 }
             })
             .disposed(by: disposeBag)

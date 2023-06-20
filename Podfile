@@ -3,7 +3,12 @@ $minimum_deployment_target = '14.0'
 
 platform :ios, $minimum_deployment_target
 
+
 target 'chat-app-ios' do
+  
+  # ignore all warnings from all dependencies
+  inhibit_all_warnings!
+  
   # Comment the next line if you don't want to use dynamic frameworks
   use_frameworks!
 

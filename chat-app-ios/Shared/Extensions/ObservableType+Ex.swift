@@ -6,47 +6,45 @@
 //
 
 import Foundation
-import RxSwift
 import RxCocoa
+import RxSwift
 
-extension ObservableType {
-
-    public func catchErrorJustComplete() -> Observable<Element> {
+public extension ObservableType {
+    func catchErrorJustComplete() -> Observable<Element> {
         return self.catch { _ in
-            return Observable.empty()
+            Observable.empty()
         }
     }
 
-    public func asDriverOnErrorJustComplete() -> Driver<Element> {
+    func asDriverOnErrorJustComplete() -> Driver<Element> {
         return asDriver { _ in
-            return Driver.empty()
+            Driver.empty()
         }
     }
 
-    public func mapToVoid() -> Observable<Void> {
+    func mapToVoid() -> Observable<Void> {
         return map { _ in }
     }
 
-    public func mapToOptional() -> Observable<Element?> {
+    func mapToOptional() -> Observable<Element?> {
         return map { value -> Element? in value }
     }
 
-    public func unwrap<T>() -> Observable<T> where Element == T? {
+    func unwrap<T>() -> Observable<T> where Element == T? {
         return flatMap { Observable.from(optional: $0) }
     }
 }
 
-extension SharedSequenceConvertibleType {
-    public func mapToVoid() -> SharedSequence<SharingStrategy, Void> {
+public extension SharedSequenceConvertibleType {
+    func mapToVoid() -> SharedSequence<SharingStrategy, Void> {
         return map { _ in }
     }
-    
-    public func mapToOptional() -> SharedSequence<SharingStrategy, Element?> {
+
+    func mapToOptional() -> SharedSequence<SharingStrategy, Element?> {
         return map { value -> Element? in value }
     }
-    
-    public func unwrap<T>() -> SharedSequence<SharingStrategy, T> where Element == T? {
+
+    func unwrap<T>() -> SharedSequence<SharingStrategy, T> where Element == T? {
         return flatMap { SharedSequence.from(optional: $0) }
     }
 }
-

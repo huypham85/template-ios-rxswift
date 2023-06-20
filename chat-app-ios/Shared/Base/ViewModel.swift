@@ -21,4 +21,3 @@ protocol ViewModelBased {
     var disposeBag: DisposeBag! { get set }
     func bindViewModel()
 }
-

@@ -22,6 +22,7 @@
 		2D6CDDAF2A41672D007DA5D9 /* Defaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D6CDDAE2A41672D007DA5D9 /* Defaults.swift */; };
 		2D6CDDB12A418451007DA5D9 /* UIViewController+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D6CDDB02A418451007DA5D9 /* UIViewController+Rx.swift */; };
 		2D6CDDB32A4184FC007DA5D9 /* ObservableType+Ex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D6CDDB22A4184FC007DA5D9 /* ObservableType+Ex.swift */; };
+		2DB02E752A41933500FD3200 /* RxIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DB02E742A41933500FD3200 /* RxIndicator.swift */; };
 		2DF785892A3AF91A0080E067 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DF785882A3AF91A0080E067 /* AppDelegate.swift */; };
 		2DF7858B2A3AF91A0080E067 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DF7858A2A3AF91A0080E067 /* SceneDelegate.swift */; };
 		2DF7858D2A3AF91A0080E067 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DF7858C2A3AF91A0080E067 /* LoginViewController.swift */; };
@@ -68,6 +69,7 @@
 		2D6CDDAE2A41672D007DA5D9 /* Defaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Defaults.swift; sourceTree = "<group>"; };
 		2D6CDDB02A418451007DA5D9 /* UIViewController+Rx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Rx.swift"; sourceTree = "<group>"; };
 		2D6CDDB22A4184FC007DA5D9 /* ObservableType+Ex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ObservableType+Ex.swift"; sourceTree = "<group>"; };
+		2DB02E742A41933500FD3200 /* RxIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RxIndicator.swift; sourceTree = "<group>"; };
 		2DF785852A3AF91A0080E067 /* chat-app-ios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "chat-app-ios.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2DF785882A3AF91A0080E067 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2DF7858A2A3AF91A0080E067 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -166,8 +168,6 @@
 				2D6CDDAD2A416713007DA5D9 /* Core */,
 				2D6CDD912A3B178A007DA5D9 /* Extensions */,
 				2D6CDD8A2A3B1481007DA5D9 /* Base */,
-				2D6CDD8F2A3B16FD007DA5D9 /* Logger.swift */,
-				2D6CDDA42A3C1321007DA5D9 /* XibLoadable.swift */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
@@ -324,7 +324,10 @@
 		2D6CDDAD2A416713007DA5D9 /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				2D6CDD8F2A3B16FD007DA5D9 /* Logger.swift */,
+				2D6CDDA42A3C1321007DA5D9 /* XibLoadable.swift */,
 				2D6CDDAE2A41672D007DA5D9 /* Defaults.swift */,
+				2DB02E742A41933500FD3200 /* RxIndicator.swift */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -405,6 +408,7 @@
 				2DF785822A3AF91A0080E067 /* Frameworks */,
 				2DF785832A3AF91A0080E067 /* Resources */,
 				BA215DC50CEC31DDF9CED3AD /* [CP] Embed Pods Frameworks */,
+				2DB02E762A4197C100FD3200 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -548,6 +552,23 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		2DB02E762A4197C100FD3200 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if [[ \"$(uname -m)\" == arm64 ]]; then\n    export PATH=\"/opt/homebrew/bin:$PATH\"\nfi\n\nif which swiftlint >/dev/null; then\n  swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
+		};
 		2EBE4CC1DC4A58218B61B5ED /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -634,6 +655,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2D6CDD9B2A3C0108007DA5D9 /* Application.swift in Sources */,
+				2DB02E752A41933500FD3200 /* RxIndicator.swift in Sources */,
 				2D6CDD932A3B17B8007DA5D9 /* Date+.swift in Sources */,
 				2D6CDDA52A3C1321007DA5D9 /* XibLoadable.swift in Sources */,
 				2D6CDDA22A3C0FC8007DA5D9 /* MainViewController.swift in Sources */,

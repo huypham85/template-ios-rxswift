@@ -7,7 +7,6 @@
 
 import Foundation
 
-
 class DefaultsKeys {
     // ===== DEFINE NEW KEY HERE
     static let accessToken = DefaultsKey<String>("accessToken")

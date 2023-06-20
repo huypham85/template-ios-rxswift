@@ -14,11 +14,10 @@ extension XibLoadable where Self: UIViewController {
     static var className: String {
         return String(describing: self)
     }
-    
+
     static func loadFromNib() -> Self {
         Log.info("Initializing \(className)")
         return self.init(nibName: className, bundle: nil)
-        
     }
 }
 
