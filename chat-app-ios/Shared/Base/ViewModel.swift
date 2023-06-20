@@ -14,3 +14,11 @@ protocol ViewModel {
     func transform(_ input: Input) -> Output
     var disposeBag: DisposeBag! { get set }
 }
+
+protocol ViewModelBased {
+    associatedtype ViewModelType: ViewModel
+    var viewModel: ViewModelType! { get set }
+    var disposeBag: DisposeBag! { get set }
+    func bindViewModel()
+}
+

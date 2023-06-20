@@ -100,3 +100,7 @@ class BaseViewController: UIViewController {
         return closeBarButtonItem
     }
 }
+
+extension BaseViewController {
+    
+}
