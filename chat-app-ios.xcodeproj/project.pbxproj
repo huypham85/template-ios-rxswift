@@ -22,6 +22,13 @@
 		2D6CDDAF2A41672D007DA5D9 /* Defaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D6CDDAE2A41672D007DA5D9 /* Defaults.swift */; };
 		2D6CDDB12A418451007DA5D9 /* UIViewController+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D6CDDB02A418451007DA5D9 /* UIViewController+Rx.swift */; };
 		2D6CDDB32A4184FC007DA5D9 /* ObservableType+Ex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D6CDDB22A4184FC007DA5D9 /* ObservableType+Ex.swift */; };
+		2D7E3B4F2A41ABF8009719B2 /* LoginUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D7E3B4E2A41ABF8009719B2 /* LoginUseCase.swift */; };
+		2D7E3B512A41AE9D009719B2 /* LoginModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D7E3B502A41AE9D009719B2 /* LoginModel.swift */; };
+		2D7E3B532A41AF0A009719B2 /* LoginDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D7E3B522A41AF0A009719B2 /* LoginDTO.swift */; };
+		2D7E3B562A41B000009719B2 /* ResponseType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D7E3B552A41B000009719B2 /* ResponseType.swift */; };
+		2D7E3B582A41B61F009719B2 /* MockLoginUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D7E3B572A41B61F009719B2 /* MockLoginUseCase.swift */; };
+		2D7E3B5A2A41B633009719B2 /* NetworkLoginUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D7E3B592A41B633009719B2 /* NetworkLoginUseCase.swift */; };
+		2D7E3B5E2A42953E009719B2 /* LoginRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D7E3B5D2A42953E009719B2 /* LoginRequest.swift */; };
 		2DB02E752A41933500FD3200 /* RxIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DB02E742A41933500FD3200 /* RxIndicator.swift */; };
 		2DF785892A3AF91A0080E067 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DF785882A3AF91A0080E067 /* AppDelegate.swift */; };
 		2DF7858B2A3AF91A0080E067 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DF7858A2A3AF91A0080E067 /* SceneDelegate.swift */; };
@@ -69,6 +76,13 @@
 		2D6CDDAE2A41672D007DA5D9 /* Defaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Defaults.swift; sourceTree = "<group>"; };
 		2D6CDDB02A418451007DA5D9 /* UIViewController+Rx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Rx.swift"; sourceTree = "<group>"; };
 		2D6CDDB22A4184FC007DA5D9 /* ObservableType+Ex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ObservableType+Ex.swift"; sourceTree = "<group>"; };
+		2D7E3B4E2A41ABF8009719B2 /* LoginUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginUseCase.swift; sourceTree = "<group>"; };
+		2D7E3B502A41AE9D009719B2 /* LoginModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginModel.swift; sourceTree = "<group>"; };
+		2D7E3B522A41AF0A009719B2 /* LoginDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginDTO.swift; sourceTree = "<group>"; };
+		2D7E3B552A41B000009719B2 /* ResponseType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseType.swift; sourceTree = "<group>"; };
+		2D7E3B572A41B61F009719B2 /* MockLoginUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockLoginUseCase.swift; sourceTree = "<group>"; };
+		2D7E3B592A41B633009719B2 /* NetworkLoginUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkLoginUseCase.swift; sourceTree = "<group>"; };
+		2D7E3B5D2A42953E009719B2 /* LoginRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginRequest.swift; sourceTree = "<group>"; };
 		2DB02E742A41933500FD3200 /* RxIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RxIndicator.swift; sourceTree = "<group>"; };
 		2DF785852A3AF91A0080E067 /* chat-app-ios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "chat-app-ios.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2DF785882A3AF91A0080E067 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -165,6 +179,7 @@
 		2D6CDD7D2A3B0CF1007DA5D9 /* Shared */ = {
 			isa = PBXGroup;
 			children = (
+				2D7E3B542A41AFDF009719B2 /* Network */,
 				2D6CDDAD2A416713007DA5D9 /* Core */,
 				2D6CDD912A3B178A007DA5D9 /* Extensions */,
 				2D6CDD8A2A3B1481007DA5D9 /* Base */,
@@ -219,6 +234,7 @@
 		2D6CDD832A3B0E9B007DA5D9 /* Entities */ = {
 			isa = PBXGroup;
 			children = (
+				2D7E3B5C2A41BC11009719B2 /* Login */,
 			);
 			path = Entities;
 			sourceTree = "<group>";
@@ -226,6 +242,7 @@
 		2D6CDD842A3B0ED3007DA5D9 /* UseCases */ = {
 			isa = PBXGroup;
 			children = (
+				2D7E3B5B2A41BC06009719B2 /* Login */,
 			);
 			path = UseCases;
 			sourceTree = "<group>";
@@ -254,6 +271,7 @@
 		2D6CDD882A3B1118007DA5D9 /* Entities */ = {
 			isa = PBXGroup;
 			children = (
+				2D7E3B502A41AE9D009719B2 /* LoginModel.swift */,
 			);
 			path = Entities;
 			sourceTree = "<group>";
@@ -261,6 +279,7 @@
 		2D6CDD892A3B1121007DA5D9 /* UseCases */ = {
 			isa = PBXGroup;
 			children = (
+				2D7E3B4D2A41ABBD009719B2 /* Login */,
 			);
 			path = UseCases;
 			sourceTree = "<group>";
@@ -330,6 +349,40 @@
 				2DB02E742A41933500FD3200 /* RxIndicator.swift */,
 			);
 			path = Core;
+			sourceTree = "<group>";
+		};
+		2D7E3B4D2A41ABBD009719B2 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				2D7E3B4E2A41ABF8009719B2 /* LoginUseCase.swift */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		2D7E3B542A41AFDF009719B2 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				2D7E3B552A41B000009719B2 /* ResponseType.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		2D7E3B5B2A41BC06009719B2 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				2D7E3B572A41B61F009719B2 /* MockLoginUseCase.swift */,
+				2D7E3B592A41B633009719B2 /* NetworkLoginUseCase.swift */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		2D7E3B5C2A41BC11009719B2 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				2D7E3B522A41AF0A009719B2 /* LoginDTO.swift */,
+				2D7E3B5D2A42953E009719B2 /* LoginRequest.swift */,
+			);
+			path = Login;
 			sourceTree = "<group>";
 		};
 		2DF7857C2A3AF91A0080E067 = {
@@ -654,8 +707,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2D7E3B512A41AE9D009719B2 /* LoginModel.swift in Sources */,
+				2D7E3B5A2A41B633009719B2 /* NetworkLoginUseCase.swift in Sources */,
 				2D6CDD9B2A3C0108007DA5D9 /* Application.swift in Sources */,
 				2DB02E752A41933500FD3200 /* RxIndicator.swift in Sources */,
+				2D7E3B582A41B61F009719B2 /* MockLoginUseCase.swift in Sources */,
 				2D6CDD932A3B17B8007DA5D9 /* Date+.swift in Sources */,
 				2D6CDDA52A3C1321007DA5D9 /* XibLoadable.swift in Sources */,
 				2D6CDDA22A3C0FC8007DA5D9 /* MainViewController.swift in Sources */,
@@ -666,11 +722,15 @@
 				2DF7858D2A3AF91A0080E067 /* LoginViewController.swift in Sources */,
 				2D6CDDA92A416245007DA5D9 /* LoginViewModel.swift in Sources */,
 				2D6CDDB32A4184FC007DA5D9 /* ObservableType+Ex.swift in Sources */,
+				2D7E3B5E2A42953E009719B2 /* LoginRequest.swift in Sources */,
+				2D7E3B532A41AF0A009719B2 /* LoginDTO.swift in Sources */,
 				2DF785892A3AF91A0080E067 /* AppDelegate.swift in Sources */,
 				2D6CDD952A3B18DC007DA5D9 /* NSObject+.swift in Sources */,
 				2D6CDDAF2A41672D007DA5D9 /* Defaults.swift in Sources */,
 				2D6CDD8C2A3B14D4007DA5D9 /* ViewModel.swift in Sources */,
 				2DF7858B2A3AF91A0080E067 /* SceneDelegate.swift in Sources */,
+				2D7E3B4F2A41ABF8009719B2 /* LoginUseCase.swift in Sources */,
+				2D7E3B562A41B000009719B2 /* ResponseType.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

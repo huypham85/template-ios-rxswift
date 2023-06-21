@@ -8,6 +8,7 @@
 import RxCocoa
 import RxSwift
 import UIKit
+import SVProgressHUD
 
 /**
  ViewController view states
@@ -26,33 +27,33 @@ public enum ViewControllerViewState: Equatable {
  Emits a Bool value indicating whether the change was animated or not
  */
 
-extension Reactive where Base: UIViewController {
-    public var viewDidLoad: Observable<Void> {
+public extension Reactive where Base: UIViewController {
+    var viewDidLoad: Observable<Void> {
         return methodInvoked(#selector(UIViewController.viewDidLoad))
             .map { _ in }
     }
 
-    public var viewDidLayoutSubviews: Observable<Void> {
+    var viewDidLayoutSubviews: Observable<Void> {
         return methodInvoked(#selector(UIViewController.viewDidLayoutSubviews))
             .map { _ in }
     }
 
-    public var viewWillAppear: Observable<Bool> {
+    var viewWillAppear: Observable<Bool> {
         return methodInvoked(#selector(UIViewController.viewWillAppear))
             .map { $0.first as? Bool ?? false }
     }
 
-    public var viewDidAppear: Observable<Bool> {
+    var viewDidAppear: Observable<Bool> {
         return methodInvoked(#selector(UIViewController.viewDidAppear))
             .map { $0.first as? Bool ?? false }
     }
 
-    public var viewWillDisappear: Observable<Bool> {
+    var viewWillDisappear: Observable<Bool> {
         return methodInvoked(#selector(UIViewController.viewWillDisappear))
             .map { $0.first as? Bool ?? false }
     }
 
-    public var viewDidDisappear: Observable<Bool> {
+    var viewDidDisappear: Observable<Bool> {
         return methodInvoked(#selector(UIViewController.viewDidDisappear))
             .map { $0.first as? Bool ?? false }
     }
@@ -64,7 +65,7 @@ extension Reactive where Base: UIViewController {
 
      - returns: Observable sequence of AppStates
      */
-    public var viewState: Observable<ViewControllerViewState> {
+    var viewState: Observable<ViewControllerViewState> {
         return Observable.of(
             viewDidLoad.map { _ in ViewControllerViewState.viewDidLoad },
             viewDidLayoutSubviews.map { _ in ViewControllerViewState.viewDidLayoutSubviews },
@@ -74,5 +75,20 @@ extension Reactive where Base: UIViewController {
             viewDidDisappear.map { _ in ViewControllerViewState.viewDidDisappear }
         )
         .merge()
+    }
+}
+
+extension Reactive where Base: UIViewController {
+    var isLoading: Binder<Bool> {
+        return Binder(base) { viewController, isLoading in
+            // Client request: remove loader and lock UI at native screen
+            if isLoading {
+                SVProgressHUD.show()
+                viewController.view.isUserInteractionEnabled = false
+            } else {
+                SVProgressHUD.dismiss()
+                viewController.view.isUserInteractionEnabled = true
+            }
+        }
     }
 }

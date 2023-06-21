@@ -11,7 +11,11 @@ import RxOptional
 import RxSwift
 
 class LoginViewModel: ViewModel {
+    var loginUseCase: LoginUseCase
     var disposeBag: DisposeBag! = DisposeBag()
+    init(loginUseCase: LoginUseCase) {
+        self.loginUseCase = loginUseCase
+    }
 
     func transform(_ input: Input) -> Output {
         let indicator = RxIndicator()
@@ -28,9 +32,20 @@ class LoginViewModel: ViewModel {
             }
             return true
         }
+        let loginResponse = input.loginTrigger
+            .withLatestFrom(textInput)
+            .map { username, password in
+                LoginRequest(username: username, password: password)
+            }
+            .flatMapLatest { [weak self] request -> Observable<LoginModel> in
+                guard let self = self else { return .empty() }
+                return self.loginUseCase.login(request)
+                    .trackActivity(indicator)
+            }
         return Output(
             isLoginEnabled: isLoginEnabled.asDriver(onErrorJustReturn: false),
-            isLoading: indicator.asDriver()
+            isLoading: indicator.asDriver(),
+            loginResponse: loginResponse.asDriverOnErrorJustComplete()
         )
     }
 }
@@ -45,5 +60,6 @@ extension LoginViewModel {
     struct Output {
         var isLoginEnabled: Driver<Bool>
         var isLoading: Driver<Bool>
+        var loginResponse: Driver<LoginModel>
     }
 }

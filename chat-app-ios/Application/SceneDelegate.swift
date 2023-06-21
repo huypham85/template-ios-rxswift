@@ -23,6 +23,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         window = UIWindow(windowScene: windowScene)
         Application.shared.configureMainInterface(in: window)
         window?.makeKeyAndVisible()
+        AppDelegate.shared?.window = window
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {
